@@ -1,4 +1,4 @@
-//ÔÚÒ»¸öÓĞĞòÊı×éÖĞ²éÕÒ´óÓÚµÈÓÚnumµÄ×î×óÎ»ÖÃ
+//åœ¨ä¸€ä¸ªæœ‰åºæ•°ç»„ä¸­æŸ¥æ‰¾å¤§äºç­‰äºnumçš„æœ€å·¦ä½ç½®
 /*#include <stdio.h>
 #define n 10
 
@@ -14,12 +14,12 @@ void left(int arr[], int num)
 		printf("the left place is %d!\n", n - 1);
 	else
 	{
-		while (mid>=0)
+		while (fir<=end)
 		{
 			if (arr[mid] >= num)
-				if(arr[mid-1]<num&&arr[mid+1]>=num)                //×¢Òâ×ó±ßµÄÊı±ØĞëĞ¡ÓÚnum¶ø²»ÄÜµÈÓÚnum,Òª¿¼ÂÇµ½Êı×éÔªËØÓĞÖØ¸´Êı×ÖµÄÇé¿ö
+				if(arr[mid-1]<num&&arr[mid+1]>=num)                //æ³¨æ„å·¦è¾¹çš„æ•°å¿…é¡»å°äºnumè€Œä¸èƒ½ç­‰äºnum,è¦è€ƒè™‘åˆ°æ•°ç»„å…ƒç´ æœ‰é‡å¤æ•°å­—çš„æƒ…å†µ
 			    {
-				printf("the left place is %d!\n", mid);            //ÏÖÔÚµÄÄ¿µÄÊÇ²éÕÒµ½×î×óÎ»ÖÃ
+				printf("the left place is %d!\n", mid);            //ç°åœ¨çš„ç›®çš„æ˜¯æŸ¥æ‰¾åˆ°æœ€å·¦ä½ç½®
 				break;
 			    }
 				else 

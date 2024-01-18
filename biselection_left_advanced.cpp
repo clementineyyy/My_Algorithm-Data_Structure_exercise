@@ -1,4 +1,4 @@
-//ÔÚÒ»¸öÓĞĞòÊı×éÖĞ²éÕÒ´óÓÚµÈÓÚnumµÄ×î×óÎ»ÖÃ
+//åœ¨ä¸€ä¸ªæœ‰åºæ•°ç»„ä¸­æŸ¥æ‰¾å¤§äºç­‰äºnumçš„æœ€å·¦ä½ç½®
 /*#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -17,12 +17,12 @@ void left(int arr[], int num)
 		printf("the left place is %d!\n", n - 1);
 	else
 	{
-		while (mid >= 0)
+		while (fir<=end)
 		{
 			if (arr[mid] >= num)
-				if (arr[mid - 1] < num && arr[mid + 1] >= num)         //×¢Òâ×ó±ßµÄÊı±ØĞëĞ¡ÓÚnum¶ø²»ÄÜµÈÓÚnum,Òª¿¼ÂÇµ½Êı×éÔªËØÓĞÖØ¸´Êı×ÖµÄÇé¿ö
+				if (arr[mid - 1] < num && arr[mid + 1] >= num)         //æ³¨æ„å·¦è¾¹çš„æ•°å¿…é¡»å°äºnumè€Œä¸èƒ½ç­‰äºnum,è¦è€ƒè™‘åˆ°æ•°ç»„å…ƒç´ æœ‰é‡å¤æ•°å­—çš„æƒ…å†µ
 				{
-					printf("the left place is %d!\n", mid);            //ÏÖÔÚµÄÄ¿µÄÊÇ²éÕÒµ½×î×óÎ»ÖÃ
+					printf("the left place is %d!\n", mid);            //ç°åœ¨çš„ç›®çš„æ˜¯æŸ¥æ‰¾åˆ°æœ€å·¦ä½ç½®
 					break;
 				}
 				else
@@ -43,11 +43,11 @@ void left(int arr[], int num)
 int* generaterandomarray(int maxsize, int maxvalue)
 {
 	srand((unsigned)time(NULL));
-	n = rand() % 11;                                //Êı×é³¤¶ÈÎª0-10£¬ÇóÓàÖ®ºóµÄÖµ¿Ï¶¨ÊÇÕûÊı
+	n = rand() % 11;                                //æ•°ç»„é•¿åº¦ä¸º0-10ï¼Œæ±‚ä½™ä¹‹åçš„å€¼è‚¯å®šæ˜¯æ•´æ•°
 	int* p = (int*)malloc(sizeof(int) * n);
 	int i;
 	for (i = 0; i < n; i++)
-		p[i] = rand() % 6;                          //Êı×éÔªËØ´óĞ¡Îª0-5
+		p[i] = rand() % 6;                          //æ•°ç»„å…ƒç´ å¤§å°ä¸º0-5
 	for (i = 0; i < n; i++)
 		printf("%d ", p[i]);
 	printf("\n");
@@ -84,7 +84,7 @@ int main()
 	int maxsize = 10, maxvalue = 5;
 	arr = generaterandomarray(maxsize, maxvalue);
 	srand((unsigned)time(NULL));
-	num = rand() % 6;                                                     //ÊäÈëµÄÊı´óĞ¡Îª0-10
+	num = rand() % 6;                                                     //è¾“å…¥çš„æ•°å¤§å°ä¸º0-10
 	printf("%d\n", num);
 	if (n == 0)
 		printf("the array do not exist!\n");

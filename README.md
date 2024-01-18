@@ -38,4 +38,4 @@ Now I've created a leetcode account and it's connected with my github account an
 
 
 
-现在我也开通了leetcode的账户并且和github上的账户时连接的，我在leetcode上也有陆陆续续练题并且发布题解，所以你们可以在leetcode上查看额外的代码。
+现在我也开通了leetcode的账户并且和github上的账户是连接的，我在leetcode上也有陆陆续续练题并且发布题解，所以你们可以在leetcode上查看额外的代码和解析。

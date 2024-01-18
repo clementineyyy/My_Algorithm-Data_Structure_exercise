@@ -9,7 +9,7 @@ void biselection(int num,int arr[])
 		printf("the number do not exist!\n");
 	else
 	{
-		while (fir<=end)                                         //只要下标>=0
+		while (fir<=end)           
 			if (arr[bi] == num)                                 //只能通过二分的位置刚好是这个数的位置来把这个数找到
 			{
 				printf("the number do exist!\n");

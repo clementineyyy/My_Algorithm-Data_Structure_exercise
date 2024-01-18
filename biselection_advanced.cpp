@@ -1,29 +1,29 @@
-//¶ş·Ö²éÕÒ£ºÊäÈëÒ»¸öÊı£¬ÔÚÓĞĞòÊı×éÖĞ²éÕÒÊÇ·ñ´æÔÚÕâ¸öÊı
+//äºŒåˆ†æŸ¥æ‰¾ï¼šè¾“å…¥ä¸€ä¸ªæ•°ï¼Œåœ¨æœ‰åºæ•°ç»„ä¸­æŸ¥æ‰¾æ˜¯å¦å­˜åœ¨è¿™ä¸ªæ•°
 /*#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-int n = 0;                                                    //n¾ÍÊÇÊı×é³¤¶È--ÓĞ¶àÉÙ¸öÔªËØ
+int n = 0;                                                    //nå°±æ˜¯æ•°ç»„é•¿åº¦--æœ‰å¤šå°‘ä¸ªå…ƒç´ 
 
 void biselection(int num, int arr[])
 {
-	int fir = 0, end = n, bi = (fir + end) / 2;                 //biÊÇÃ¿Ò»´Î¶ş·ÖÖ®ºóµÄÊı×éÏÂ±ê,ÒªĞ´³ÉÃ¿Ò»´ÎÇø¼äÊ×Î²ÏÂ±êÏà¼Ó³ıÒÔ2²ÅÊÇÖĞ¼äµÄÏÂ±ê
-	if (arr[0] > num || arr[n - 1] < num)                       //ÒòÎªÊÇÓĞĞòÊı×é£¬Èç¹ûËù²éÕÒµÄÊı²»ÔÚ·¶Î§Ö®ÄÚ£¬Ö±½ÓÅĞ¶¨Õâ¸öÊı²»´æÔÚ
+	int fir = 0, end = n, bi = (fir + end) / 2;                 //biæ˜¯æ¯ä¸€æ¬¡äºŒåˆ†ä¹‹åçš„æ•°ç»„ä¸‹æ ‡,è¦å†™æˆæ¯ä¸€æ¬¡åŒºé—´é¦–å°¾ä¸‹æ ‡ç›¸åŠ é™¤ä»¥2æ‰æ˜¯ä¸­é—´çš„ä¸‹æ ‡
+	if (arr[0] > num || arr[n - 1] < num)                       //å› ä¸ºæ˜¯æœ‰åºæ•°ç»„ï¼Œå¦‚æœæ‰€æŸ¥æ‰¾çš„æ•°ä¸åœ¨èŒƒå›´ä¹‹å†…ï¼Œç›´æ¥åˆ¤å®šè¿™ä¸ªæ•°ä¸å­˜åœ¨
 		printf("the number do not exist!\n");
 	else
 	{
-		while (bi >= 0)                                         //Ö»ÒªÏÂ±ê>=0
-			if (arr[bi] == num)                                 //Ö»ÄÜÍ¨¹ı¶ş·ÖµÄÎ»ÖÃ¸ÕºÃÊÇÕâ¸öÊıµÄÎ»ÖÃÀ´°ÑÕâ¸öÊıÕÒµ½
+		while (fir<=end)      
+			if (arr[bi] == num)                                 //åªèƒ½é€šè¿‡äºŒåˆ†çš„ä½ç½®åˆšå¥½æ˜¯è¿™ä¸ªæ•°çš„ä½ç½®æ¥æŠŠè¿™ä¸ªæ•°æ‰¾åˆ°
 			{
 				printf("the number do exist!\n");
 				break;
 			}
-			else if (arr[bi] > num)                             //Êı×éÔªËØ´ÓĞ¡µ½´ó£¬Èç¹ûÕâ¸öÊıÔÚ×ó±ß
+			else if (arr[bi] > num)                             //æ•°ç»„å…ƒç´ ä»å°åˆ°å¤§ï¼Œå¦‚æœè¿™ä¸ªæ•°åœ¨å·¦è¾¹
 			{
-				end = bi;                                       //ÒÆ¶¯µÄÊÇÊ×Î²ÏÂ±ê
+				end = bi;                                       //ç§»åŠ¨çš„æ˜¯é¦–å°¾ä¸‹æ ‡
 				bi = (fir + end) / 2;
 			}
-			else if (arr[bi] < num)                             //Èç¹ûÕâ¸öÊıÔÚÓÒ±ß
+			else if (arr[bi] < num)                             //å¦‚æœè¿™ä¸ªæ•°åœ¨å³è¾¹
 			{
 				fir = bi;
 				bi = (fir + end) / 2;
@@ -34,11 +34,11 @@ void biselection(int num, int arr[])
 int* generaterandomarray(int maxsize, int maxvalue)
 {
 	srand((unsigned)time(NULL));
-	n = rand() % (maxsize + 1);                                           //Êı×é³¤¶ÈÎª0-10
-	int* p = (int*)malloc(sizeof(int) * n);                    //¸øÕâ¸öÊı×é·Ö¶æ¶àÉÙÄÚ´æ¿Õ¼ä£¬Ê¹ÓÃ¶¯Ì¬ÄÚ´æ·ÖÅäº¯Êı
+	n = rand() % (maxsize + 1);                                           //æ•°ç»„é•¿åº¦ä¸º0-10
+	int* p = (int*)malloc(sizeof(int) * n);                    //ç»™è¿™ä¸ªæ•°ç»„åˆ†èˆµå¤šå°‘å†…å­˜ç©ºé—´ï¼Œä½¿ç”¨åŠ¨æ€å†…å­˜åˆ†é…å‡½æ•°
 	int i;
 	for (i = 0; i < n; i++)
-		p[i] = rand()%(maxvalue+1);                             //Êı×éÔªËØ´óĞ¡Îª0-100        
+		p[i] = rand()%(maxvalue+1);                             //æ•°ç»„å…ƒç´ å¤§å°ä¸º0-100        
 	for (i = 0; i < n; i++)
 		printf("%d ", p[i]);
 	printf("\n");
@@ -75,17 +75,17 @@ int main()
 		arr = generaterandomarray(maxsize, maxvalue);
 		insert(arr);
 		srand((unsigned)time(NULL));
-		num = rand() % 101;                                           //Ëù²éÕÒµÄÊı×Ö´óĞ¡Îª0-1000
+		num = rand() % 101;                                           //æ‰€æŸ¥æ‰¾çš„æ•°å­—å¤§å°ä¸º0-1000
 		printf("%d\n", num);
-		if (n == 0)                                                    //Èç¹ûÊı×é²»´æÔÚ
+		if (n == 0)                                                    //å¦‚æœæ•°ç»„ä¸å­˜åœ¨
 			printf("the array do not exist\n");
-		else if (n == 1)                                               //Èç¹ûÊı×éÖ»ÓĞÒ»¸öÊı
+		else if (n == 1)                                               //å¦‚æœæ•°ç»„åªæœ‰ä¸€ä¸ªæ•°
 		{
 			if (arr[0] == num)
 				printf("the number do exist!\n");
 			else printf("the number do not exist!\n");
 		}
-		else if (n >= 2)                                                  //Êı×é³¤¶È´óÓÚ2²Å¶ş·Ö²éÕÒ
+		else if (n >= 2)                                                  //æ•°ç»„é•¿åº¦å¤§äº2æ‰äºŒåˆ†æŸ¥æ‰¾
 			biselection(num, arr);
 	}
 

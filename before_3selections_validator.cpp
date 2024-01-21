@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int len = 0;                                         //¸É´àÓÃÒ»¸öÈ«¾Ö±äÁ¿Ö±½ÓµÃµ½Êı×é³¤¶È£¨¹Ì¶¨£©
+int len = 0;                                         //å¹²è„†ç”¨ä¸€ä¸ªå…¨å±€å˜é‡ç›´æ¥å¾—åˆ°æ•°ç»„é•¿åº¦ï¼ˆå›ºå®šï¼‰
 
 void swap(int arr[], int i, int j)
 {
@@ -57,14 +57,14 @@ void insert(int arr[], int len)
 	printf("\n");
 }
 
-int* generaterandomarray(int maxsize, int maxvalue)               //¶¨ÒåÒ»¸ö·µ»ØÖ¸ÕëÖµµÄº¯Êı£¬±ÜÃâÖ¸ÕëÃ»ÓĞ³õÊ¼»¯µÄÇé¿ö
+int* generaterandomarray(int maxsize, int maxvalue)               //å®šä¹‰ä¸€ä¸ªè¿”å›æŒ‡é’ˆå€¼çš„å‡½æ•°ï¼Œé¿å…æŒ‡é’ˆæ²¡æœ‰åˆå§‹åŒ–çš„æƒ…å†µ
 {
-	srand((unsigned)time(NULL));                                  //ĞèÒªÊ¹ÓÃtimeº¯Êı¿âºÍstdlibº¯Êı¿â£¬ËùÒÔ²úÉúµÄËæ»úÊıºÍÊ±¼äÏà¹Ø£¬ÔÚÍ¬Ò»ÃëÄÚ²úÉúµÄËæ»úÊıÊÇÏàÍ¬µÄ
-	len= (int)(rand() % (maxsize + 1));                           //Êı×é³¤¶È×î´óÖµÎªmaxsize,²úÉú0-maxsizeµÄËæ»úÊı£¬maxsze+1»á±»Õû³ı¼´ÉáÈ¥
-    int *p = (int *)malloc(sizeof(int) * len);                    //¸øÖ¸Õë¸³ÉÏÕâ¸ö·ÖÅäµÄÄÚ´ç¿Õ¼äµÄÊ×µØÖ·£¬Ê¹ÓÃ¶¯Ì¬ÄÚ´æ·ÖÅäº¯Êı,ÀïÃæÊÇ×Ö½ÚÊı£¬ÒªÇ¿ÖÆÀàĞÍ×ª»»
+	srand((unsigned)time(NULL));                                  //éœ€è¦ä½¿ç”¨timeå‡½æ•°åº“å’Œstdlibå‡½æ•°åº“ï¼Œæ‰€ä»¥äº§ç”Ÿçš„éšæœºæ•°å’Œæ—¶é—´ç›¸å…³ï¼Œåœ¨åŒä¸€ç§’å†…äº§ç”Ÿçš„éšæœºæ•°æ˜¯ç›¸åŒçš„
+	len= (int)(rand() % (maxsize + 1));                           //æ•°ç»„é•¿åº¦æœ€å¤§å€¼ä¸ºmaxsize,äº§ç”Ÿ0-maxsizeçš„éšæœºæ•°ï¼Œmaxsze+1ä¼šè¢«æ•´é™¤å³èˆå»
+    int *p = (int *)malloc(sizeof(int) * len);                    //ç»™æŒ‡é’ˆèµ‹ä¸Šè¿™ä¸ªåˆ†é…çš„å†…å¯¸ç©ºé—´çš„é¦–åœ°å€ï¼Œä½¿ç”¨åŠ¨æ€å†…å­˜åˆ†é…å‡½æ•°,é‡Œé¢æ˜¯å­—èŠ‚æ•°ï¼Œè¦å¼ºåˆ¶ç±»å‹è½¬æ¢
 	int i;
 	for (i = 0; i < len; i++)
-		p[i] = (int)rand() % (maxvalue + 1);                      //°ÑÖ¸Õë¿´×÷Êı×éÊ×µØÖ·£¬¶ÔÃ¿Ò»¸öÊı×éÔªËØ¸³Öµ
+		p[i] = (int)rand() % (maxvalue + 1);                      //æŠŠæŒ‡é’ˆçœ‹ä½œæ•°ç»„é¦–åœ°å€ï¼Œå¯¹æ¯ä¸€ä¸ªæ•°ç»„å…ƒç´ èµ‹å€¼
 	for (i = 0; i < len; i++)
 		printf("%d ", p[i]);
 	printf("\n");
@@ -87,13 +87,13 @@ int compare(int str1[], int str2[],int len)
 
 int main()
 {
-	int testtime = 1000000, maxsize = 10, maxvalue = 500000, i;   //²âÊÔtesttime´Î£¬Êı×é×î´ó³¤¶ÈÎªmaxsize,Êı×éÔªËØ×î´óÖµÎªmaxvalue
+	int testtime = 1000000, maxsize = 10, maxvalue = 500000, i;   //æµ‹è¯•testtimeæ¬¡ï¼Œæ•°ç»„æœ€å¤§é•¿åº¦ä¸ºmaxsize,æ•°ç»„å…ƒç´ æœ€å¤§å€¼ä¸ºmaxvalue
 	for (i = 0; i < testtime; i++)
 	{
-		int *arr1=generaterandomarray(maxsize, maxvalue);         //ÓÃÖ¸Õë´úÌæÊı×é£¬ÒòÎªÊı×é±ØĞëÊÇ¹Ì¶¨³¤¶È
+		int *arr1=generaterandomarray(maxsize, maxvalue);         //ç”¨æŒ‡é’ˆä»£æ›¿æ•°ç»„ï¼Œå› ä¸ºæ•°ç»„å¿…é¡»æ˜¯å›ºå®šé•¿åº¦
 		int *arr2 = arr1;
 		int *arr3 = arr2;
-		if (arr1 == NULL || len < 2)                              //ÅÅ³ıµôÊı×éÎª¿Õ»òÕßÊı×éÔªËØ¸öÊıÎª1£¬¼´²»ÓÃÅÅĞòµÄÇé¿ö
+		if (arr1 == NULL || len < 2)                              //æ’é™¤æ‰æ•°ç»„ä¸ºç©ºæˆ–è€…æ•°ç»„å…ƒç´ ä¸ªæ•°ä¸º1ï¼Œå³ä¸ç”¨æ’åºçš„æƒ…å†µ
 			continue;
 		select(arr1, len);
 		bubble(arr2, len);

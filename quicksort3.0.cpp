@@ -1,4 +1,4 @@
-//¿ìÅÅ3.0£ºÎŞĞòÊı×éÖĞËæ»úÈ¡Ò»¸öÊıÊÇnum,ºÍ×îºóÒ»¸öÊı½»»»Î»ÖÃ£¬È»ºóÊ¹Ğ¡ÓÚnumµÄÊıÔÚ×ó±ß£¬µÈÓÚnumµÄÊıÔÚÖĞ¼ä,´óÓÚnumµÄÊıÔÚÓÒ±ß
+//å¿«æ’3.0ï¼šæ— åºæ•°ç»„ä¸­éšæœºå–ä¸€ä¸ªæ•°æ˜¯num,å’Œæœ€åä¸€ä¸ªæ•°äº¤æ¢ä½ç½®ï¼Œç„¶åä½¿å°äºnumçš„æ•°åœ¨å·¦è¾¹ï¼Œç­‰äºnumçš„æ•°åœ¨ä¸­é—´,å¤§äºnumçš„æ•°åœ¨å³è¾¹
 /*#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -14,7 +14,7 @@ int* generaterandomarray()
 	srand((unsigned)time(NULL));
 	n = rand() % (maxsize + 1);
 	int* p = (int*)malloc(sizeof(int) * n);
-	for (int i = 0; i < n; i++)                       //´Ë´¦¶¨ÒåµÄi¾¹È»Ö»ÔÚ¸ÃÑ­»·ÄÚÓĞĞ§£¡£¡£¡
+	for (int i = 0; i < n; i++)                       //æ­¤å¤„å®šä¹‰çš„iç«Ÿç„¶åªåœ¨è¯¥å¾ªç¯å†…æœ‰æ•ˆï¼ï¼ï¼
 		p[i] = rand() % (maxvalue + 1);
 	for (int i = 0; i < n; i++)
 		printf("%d ", p[i]);
@@ -49,10 +49,10 @@ void quicksort(int arr[], int l, int r)
 {
 	if (l < r)
 	{
-		int num = l+rand() % (r-l+1);              //numÊÇÑ¡ÖĞµÄÏÂ±ê,×¢ÒâÈ¡Ëæ»úÊıÇ°Ãæ±ØĞë¼ÓÉÏL!!!!!!!
+		int num = l+rand() % (r-l+1);              //numæ˜¯é€‰ä¸­çš„ä¸‹æ ‡,æ³¨æ„å–éšæœºæ•°å‰é¢å¿…é¡»åŠ ä¸ŠL!!!!!!!
 		swap(arr, num, r);
 		partition(arr, l, r);
-		quicksort(arr, l, less);
+		quicksort(arr, l, less);                   //åšé€’å½’ï¼šè‡ªå·±è°ƒç”¨è‡ªå·±
 		quicksort(arr, more, r);
 	}
 }
